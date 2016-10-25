@@ -19,6 +19,7 @@
 #///////////////////////////////////////////////////////////////////////////////////////////
 echo "#############################################################"
 echo "### $0 by cassio@ime.usp.br for Ubuntu 14.04.3 ###"
+echo "### $0 modificado por rsaucedo@ipn.mx para Ubuntu 16.04 ###"
 echo "#############################################################"
 
 if [ "`id -u`" != "0" ]; then
@@ -34,7 +35,9 @@ fi
 # echo "#!/bin/bash" >/usr/bin/update-notifier
 # find /usr/lib -name notify-osd | xargs chmod -x
 # killall notify-osd 2>/dev/null
-apt-get -y install python-software-properties 2>/dev/null
+
+echo "Instalando paquetes necesarios..."
+apt-get -y install software-properties-common 2>/dev/null
 
 for i in id chown chmod cut awk tail grep cat sed mkdir rm mv sleep apt-get add-apt-repository update-alternatives; do
   p=`which $i`
